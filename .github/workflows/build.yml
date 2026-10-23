@@ -31,6 +31,6 @@ jobs:
           -Dnightly_key_password="${{ secrets.KEYPASS }}"
 
       - uses: actions/upload-artifact@v4
-        with
+        with:
           name: gadgetbridge-nightly
           path: app/build/outputs/apk/mainline/nightly/*.apk
