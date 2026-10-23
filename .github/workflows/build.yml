@@ -24,7 +24,7 @@ jobs:
 
       - name: Build
         run: >
-          ./gradlew assembleMainlineNightly --stacktrace
+          ./gradlew assembleMainlineNopebble --stacktrace
           -Dnightly_store_file="$RUNNER_TEMP/keystore.p12"
           -Dnightly_store_password="${{ secrets.KEYSTOREPASS }}"
           -Dnightly_key_alias="gadgetbridge"
@@ -33,4 +33,4 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: gadgetbridge-nightly
-          path: app/build/outputs/apk/mainline/nightly/*.apk
+          path: app/build/outputs/apk/**/*.apk
